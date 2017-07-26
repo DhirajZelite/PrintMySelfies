@@ -1,16 +1,38 @@
 page-login {
-    .content{
-       // background-color: cadetblue; 
-        background-image: url("../assets/img/background2.jpg");
-        background-repeat: no-repeat;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    // .content{
+    //    // background-color: cadetblue; 
+    //     background : url("../assets/img/background2.jpg") no-repeat fixed center;
+    //     -webkit-background-size: cover;
+    //     -moz-background-size: cover;
+    //     background-size: cover;
+    // }
+
+    #loginCard{
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 5px;
+        padding: 8px;
     }
     .item{
-        background-color: rgba(0,0,0,0.3);
+        background-color: rgba(0,0,0,0);
         color: azure;
-        border-radius: 5px;
+    }
+
+    .hr-sect {
+	    display: flex;
+	    flex-basis: 100%;
+	    align-items: center;
+	    color: rgba(0, 0, 0, 0.35);
+	    font-size: 12px;
+	    margin: 8px 0px;
+    }
+    .hr-sect::before,
+    .hr-sect::after {
+	    content: "";
+	    flex-grow: 1;
+	    background: rgba(0, 0, 0, 0.35);
+	    height: 1px;
+	    font-size: 0px;
+	    line-height: 0px;
+	    margin: 0px 5px;
     }
 }

@@ -12,6 +12,8 @@
 
 
 <ion-content padding>
+  <img src="assets/img/zlogo.png" width="30%" height="30%" style="margin:auto;display:block; text-align:center;">
+  <ion-card id="registerCard">
       <form [formGroup]="myForm">
         <ion-row>
           <ion-col>
@@ -47,18 +49,6 @@
             <button ion-button block round color="primary"(click)="register()">Register</button>
           </ion-col>
         </ion-row>
-       </form>
-<!--<ion-item>
-  <ion-label floating>Email Address</ion-label>
-  <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label floating>Password</ion-label>
-  <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label floating>Conform Password</ion-label>
-  <ion-input type="conform_password" [(ngModel)]="user.conform_password"></ion-input>
-</ion-item>
-<button ion-button round block (click)="register(user)">Register</button>-->
+      </form>
+  </ion-card>
 </ion-content>

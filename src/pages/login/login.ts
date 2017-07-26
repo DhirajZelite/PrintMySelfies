@@ -3,8 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 import { User } from "../../model/user";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AlertController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { MyApp } from '../../app/app.component';
 import { RegisterPage } from '../register/register';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,7 +20,7 @@ import { RegisterPage } from '../register/register';
 })
 export class LoginPage {
   user = {} as User;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private alertControl: AlertController,private afauth:AngularFireAuth) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private alertControl: AlertController,private afauth:AngularFireAuth,private storage:Storage) {
   }
   async login(user:User){
     try { 
@@ -29,8 +30,9 @@ export class LoginPage {
           id: responce.id,
           picture: responce.photoUrl
         }
-        window.localStorage.setItem('currentuser',JSON.stringify(responce));
-        this.navCtrl.setRoot(HomePage);
+        //window.localStorage.setItem('currentuser',JSON.stringify(responce));
+        this.storage.set('currentuser', JSON.stringify(responce) );
+        this.navCtrl.setRoot(MyApp);
       }).catch((e)=>{
         let alert = this.alertControl.create({
           title: 'Warning!',

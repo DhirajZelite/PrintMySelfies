@@ -1,15 +1,12 @@
 page-register {
-    .content{
-       // background-color: cadetblue; 
-        background-image: url("../assets/img/background2.jpg");
-        background-repeat: no-repeat;
-        align-content: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+    #registerCard{
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 5px;
+        padding: 8px;
     }
     .item{
-        background-color: rgba(0,0,0,0.3);
+        background-color: rgba(0,0,0,0);
         color: azure;
         border-radius: 5px;
     }

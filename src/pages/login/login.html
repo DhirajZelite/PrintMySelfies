@@ -5,15 +5,15 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar color="favorite">
     <ion-title>Login</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  <img src="assets/img/zlogo.png" width="30%" height="30%" style="margin:auto;display:block; text-align:center;">
+<ion-card id="loginCard">
 <ion-item>
   <ion-label floating><ion-icon name="mail"></ion-icon> Email</ion-label>
   <ion-input type="text" [(ngModel)]="user.email"></ion-input>
@@ -23,6 +23,13 @@
   <ion-input type="password" [(ngModel)]="user.password"></ion-input>
 </ion-item>
 
-<button ion-button round block (click)="login(user)">Login</button>
+<button ion-button round block color="secondary" (click)="login(user)">Login</button>
 <button ion-button clear block color="Blue" (click)="register()">If You are New User? Register here. </button>
+<div class="hr-sect">&nbsp; OR &nbsp;</div>
+<p>sign in using</p>
+<div class="row">
+<button ion-button class="col col-50" block style="background-color:#dd5745"><ion-icon name="logo-googleplus"></ion-icon>&nbsp;&nbsp;Google</button>&nbsp;&nbsp;
+<button ion-button class="col col-50" block><ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp; Facebook</button>
+</div>
+</ion-card>
 </ion-content>

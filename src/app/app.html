@@ -1,17 +1,30 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar color="favorite">
+    <!--<ion-toolbar color="favorite">
       <ion-title>Menu</ion-title>
-    </ion-toolbar>
+    </ion-toolbar>-->
   </ion-header>
 
   <ion-content class="myBg">
+    <div class="wrapper">
+      <img src="assets/img/slider3.jpg"/>
+      <img src="{{photo}}" class="item-avatar">
+      <p class="name">{{ name }}</p>
+      <p class="email">{{ email }}</p>
+    </div>
     <ion-list>
       <button  class="myBg" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
   </ion-content>
+  <ion-footer>
+  <ion-toolbar color="favorite">
+    <button ion-button color="white" menuClose block outline position="bottom" width="100%" (click)="logout()" class="item2">
+      Logout
+    </button>
+  </ion-toolbar>
+</ion-footer>
 
 </ion-menu>
 

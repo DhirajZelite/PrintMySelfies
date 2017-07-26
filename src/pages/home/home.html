@@ -4,6 +4,14 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Print My Selfies</ion-title>
+    <ion-buttons end>
+    <button ion-button (click)="getImage()">
+      <ion-icon name="image"></ion-icon>
+    </button> 
+    <button ion-button (click)="getCamera()">
+      <ion-icon name="camera"></ion-icon>
+    </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -14,15 +22,15 @@
     <img src="../assets/img/slider4.jpg" height="100%" width="100%" (click)="imgClick()"/>
   </ion-slide>-->
   <ion-slide>
-    <img src="../assets/img/slider4.jpg" height="100%" width="100%" (click)="imgClick()" style="margin:auto;display:block"/>
+    <img src="assets/img/slider4.jpg" height="100%" width="100%" (click)="imgClick()" style="margin:auto;display:block"/>
   </ion-slide>
 
   <ion-slide>
-    <img src="../assets/img/slider1.jpg" height="100%" width="100%" (click)="imgClick()" style="margin:auto;display:block" />
+    <img src="assets/img/slider1.jpg" height="100%" width="100%" (click)="imgClick()" style="margin:auto;display:block" />
   </ion-slide>
 
   <ion-slide>
-    <img src="../assets/img/slider2.jpg" height="100%" width="100%" (click)="imgClick()" style="margin:auto;display:block"/>
+    <img src="assets/img/slider2.jpg" height="100%" width="100%" (click)="imgClick()" style="margin:auto;display:block"/>
   </ion-slide>
 
 </ion-slides>
@@ -37,4 +45,21 @@
       <ion-icon name="arrow-dropright" item-right></ion-icon>
     </ion-item>
   </ion-item-group>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let photo of photos; let id = index">
+        <ion-card class="block">
+        <ion-icon  name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+        <img [src]="photo" *ngIf="photo" />
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="favorite">
+    <ion-title style="text-align:center">copyright &copy; Zelite Solution Pvt. Ltd.</ion-title>
+  </ion-toolbar>
+</ion-footer>
