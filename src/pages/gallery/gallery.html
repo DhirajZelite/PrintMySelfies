@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="favorite">
+    <ion-title>Gallery</ion-title>
+    <ion-buttons end>
+       <button ion-button (click)="getOrder()">
+        <ion-icon name="cart" ></ion-icon>
+        <ion-badge item-end *ngIf="photos.length">{{photos.length}}</ion-badge>
+      </button> 
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-tabs color="favorite">
+  <ion-tab [root]="tab1Root" tabIcon="images"></ion-tab>
+  <ion-tab [root]="tab2Root" tabIcon="camera"></ion-tab>
+  </ion-tabs>
+</ion-content>

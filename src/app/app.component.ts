@@ -32,7 +32,7 @@ export class MyApp {
       }
       else{
         this.data=JSON.parse(val);
-        console.log(this.data.email+" "+this.data.displayName+" "+this.data.photoURL);
+        //console.log(this.data.email+" "+this.data.displayName+" "+this.data.photoURL);
         if(this.data.photoURL === null)
         {
           this.photo = 'assets/img/profile.png';

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="favorite">
+    <ion-title>Your Card</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+  <ion-card-content>
+    <ion-item>
+      <!--<ion-icon name="logo-twitter" item-start></ion-icon>-->
+      Selected Item
+      <ion-badge item-end>{{ count }}</ion-badge>
+    </ion-item>
+    <ion-item>
+      Price
+      <ion-badge item-end>&#8377; &nbsp;{{tprice}}</ion-badge>
+    </ion-item>
+     <ion-item>
+      Shipping
+      <ion-badge item-end>&#8377; &nbsp;{{shipping}}</ion-badge>
+    </ion-item>
+    <ion-item>
+      GST
+      <ion-badge item-end>&#8377; &nbsp;{{GST}}</ion-badge>
+    </ion-item>
+    <hr>
+    <ion-item>
+      Total
+      <ion-badge item-end>&#8377; &nbsp; {{total}}</ion-badge>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+<ion-item >
+    <button ion-button block round color="primary" (click)="getSlip()">Next</button>
+</ion-item>
+</ion-content>

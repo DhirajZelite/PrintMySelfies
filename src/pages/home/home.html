@@ -4,23 +4,19 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Print My Selfies</ion-title>
-    <ion-buttons end>
-    <button ion-button (click)="getImage()">
-      <ion-icon name="image"></ion-icon>
-    </button> 
-    <button ion-button (click)="getCamera()">
-      <ion-icon name="camera"></ion-icon>
-    </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<ion-slides autoplay="5000" loop="true" speed="3000" pager>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
 
-  <!--<ion-slide style="background-image: url('../assets/img/slider4.jpg')">
-    <img src="../assets/img/slider4.jpg" height="100%" width="100%" (click)="imgClick()"/>
-  </ion-slide>-->
+<ion-slides autoplay="4000" loop="true" speed="3000" pager>
   <ion-slide>
     <img src="assets/img/slider4.jpg" height="100%" width="100%" (click)="imgClick()" style="margin:auto;display:block"/>
   </ion-slide>
@@ -34,32 +30,42 @@
   </ion-slide>
 
 </ion-slides>
-
+<!--<div class="row">
+  <div class="col col-33">
+          <img  class="full-image" src="assets/img/listitem1.jpg"/>
+  </div>
+</div>
+<div class="row row-33">
+  <div class="col col-33">
+    <img  class="full-image" src="assets/img/listitem2.jpg"/>
+  </div>
+</div>
+<div class="row row-33">
+  <div class="col col-33">
+    <img  class="full-image" src="assets/img/listitem3.jpeg"/>
+  </div>
+</div> -->
   <ion-item-group>
-    <ion-item (click)="itemClick()">
-        Type One<ion-icon name="arrow-dropright" item-right></ion-icon></ion-item>
-    <ion-item (click)="itemClick()">Type Two
-      <ion-icon name="arrow-dropright" item-right></ion-icon>
-    </ion-item>
-    <ion-item (click)="itemClick()">Type Three
-      <ion-icon name="arrow-dropright" item-right></ion-icon>
-    </ion-item>
+    <ion-card (click)="itemClick()">
+      <img src="assets/img/listitem1.jpg" width="100%" height="50%"/>
+      <div class="card-title">Item</div>
+      <div class="card-subtitle">one</div>
+    </ion-card>
+    <ion-card (click)="itemClick()">
+      <img src="assets/img/listitem2.jpg" width="100%" height="50%" />
+      <div class="card-title">Item</div>
+      <div class="card-subtitle">Two</div>
+    </ion-card>
+    <ion-card (click)="itemClick()">
+      <img heigth="50%" src="assets/img/listitem3.jpeg" width="100%" height="50%"/>
+      <div class="card-title">Item</div>
+      <div class="card-subtitle">Three</div>
+    </ion-card>
   </ion-item-group>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col col-6 *ngFor="let photo of photos; let id = index">
-        <ion-card class="block">
-        <ion-icon  name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
-        <img [src]="photo" *ngIf="photo" />
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 </ion-content>
 
-<ion-footer>
+<!--<ion-footer>
   <ion-toolbar color="favorite">
     <ion-title style="text-align:center">copyright &copy; Zelite Solution Pvt. Ltd.</ion-title>
   </ion-toolbar>
-</ion-footer>
+</ion-footer>-->

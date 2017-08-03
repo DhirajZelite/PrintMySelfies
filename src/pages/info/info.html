@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar color="favorite">
+    <ion-title>Delivery Address</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Shipping Address</ion-label>
+  </ion-item>
+  <ion-card>
+    <form [formGroup]="myForm" (ngSubmit)="addPost(myForm.value)">
+        <ion-row>
+          <ion-col>
+            <ion-list inset>
+              <ion-item>
+                <ion-label floating>First Name</ion-label>
+                <ion-input type="text"  name="firstname" formControlName="firstname"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!myForm.controls.firstname.valid && myForm.controls.firstname.touched">
+                <p style="color:red;">First Name is required.</p>
+              </ion-item>
+
+                <ion-item>
+                  <ion-label floating>Last Name</ion-label>
+                  <ion-input type="text"  name="lastname"  formControlName="lastname"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="!myForm.controls.lastname.valid && myForm.controls.lastname.touched">
+                  <p style="color:red;">Last Name is required.</p>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label floating>
+                    Address 1
+                  </ion-label>
+                  <ion-input type="text" name="address1" formControlName="address1"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="!myForm.controls.address1.valid && myForm.controls.address1.touched">
+                  <p style="color:red;">Address is required.</p>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label floating>
+                    Address 2
+                  </ion-label>
+                  <ion-input type="text" name="address2" formControlName="address2"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label floating>
+                    Address 3
+                  </ion-label>
+                  <ion-input type="text" name="address3" formControlName="address3"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label floating>
+                    City
+                  </ion-label>
+                  <ion-input type="text" name="city" formControlName="city"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label floating>
+                    PinCode
+                  </ion-label>
+                  <ion-input type="number" name="pincode" formControlName="pincode"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label floating>
+                    Mobile Number
+                  </ion-label>
+                  <ion-input type="number" name="mobile" formControlName="mobile"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="!myForm.controls.mobile.valid && myForm.controls.mobile.touched">
+                  <p style="color:red;">This Feild is Required And Max 10 digit.</p>
+                </ion-item>
+            </ion-list>
+            <button ion-button block round color="primary" [disabled]="!myForm.valid">Submit</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-card>
+</ion-content>
