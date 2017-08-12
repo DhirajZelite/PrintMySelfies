@@ -14,7 +14,7 @@
     </button>
     </ion-buttons>-->
 
-<ion-content padding>
+<ion-content padding style="background-color:#edeadb">
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
       pullingIcon="arrow-dropdown"
@@ -32,7 +32,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-item >
-    <button ion-button type="submit" block (click)="getOrder()">Next</button>
-  </ion-item>
+    <button ion-button round type="submit" block (click)="getOrder()">Next</button>
 </ion-content>

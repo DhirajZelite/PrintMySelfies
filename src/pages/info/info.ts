@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+
+import { ReceiptPage } from '../receipt/receipt';
 /**
  * Generated class for the InfoPage page.
  *
@@ -49,6 +51,10 @@ export class InfoPage {
      this.mobile = post.mobile;
      this.pincode = post.pincode;
      this.city = post.city;
+     this.navCtrl.push(ReceiptPage,{
+       firstname:this.firstname, lastname:this.lastname, address1:this.address1, address2:this.address2, address3:this.address3,
+       city:this.city, pincode:this.pincode, mobile:this.mobile
+     });
      console.log(this.firstname+" "+this.lastname+" "+this.address1+" "+this.address2+" "+this.address3+" "+this.city+" "+this.pincode+" "+this.mobile);
   }
 }

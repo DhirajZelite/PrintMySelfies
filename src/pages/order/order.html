@@ -32,7 +32,9 @@
     </ion-item>
   </ion-card-content>
 </ion-card>
-<ion-item >
-    <button ion-button block round color="primary" (click)="getSlip()">Next</button>
-</ion-item>
+  <div class="row">
+    <button ion-button class="col col-50" block style="background-color:#dd5745" (click)="getHome()">Continue Shopping</button>&nbsp;&nbsp;
+    <button ion-button class="col col-50" block (click)="getSlip()">Checkout</button>
+  </div>
+    <!--<button ion-button block round color="primary" (click)="getSlip()">Next</button>-->
 </ion-content>

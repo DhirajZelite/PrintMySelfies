@@ -22,7 +22,7 @@ import { CameraPage } from '../pages/camera/camera';
 import { OrderPage } from '../pages/order/order';
 import { PhotoProvider } from '../providers/photo/photo';
 import { InfoPage } from '../pages/info/info';
-
+import { ReceiptPage } from '../pages/receipt/receipt';
 
 
   // Initialize Firebase
@@ -46,7 +46,8 @@ import { InfoPage } from '../pages/info/info';
     CameraPage,
     ImagePage,
     OrderPage,
-    InfoPage
+    InfoPage,
+    ReceiptPage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +68,8 @@ import { InfoPage } from '../pages/info/info';
     CameraPage,
     ImagePage,
     OrderPage,
-    InfoPage
+    InfoPage,
+    ReceiptPage
   ],
   providers: [
     StatusBar,

@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform,AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import firebase from 'firebase';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -20,7 +21,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any , icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar,private storage: Storage, public splashScreen: SplashScreen,public alertCtrl:AlertController) {
     this.initializeApp();
@@ -51,8 +52,8 @@ export class MyApp {
     });
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', component: HomePage, icon: "home" },
+      { title: 'List', component: ListPage, icon: "list" }
     ];
 
   }

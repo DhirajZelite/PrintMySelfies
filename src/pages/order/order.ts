@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PhotoProvider } from '../../providers/photo/photo';
 import { InfoPage } from '../info/info';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-order',
@@ -34,5 +35,10 @@ export class OrderPage {
   getSlip()
   {
     this.navCtrl.push(InfoPage);
+  }
+
+  getHome()
+  {
+    this.navCtrl.setRoot(HomePage);
   }
 }
